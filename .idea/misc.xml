@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/Pol/AndroidStudioProjects/P10FireBase/app/src/main/res/drawable/audio.xml" value="0.2703125" />
+        <entry key="..\:/Users/Pol/AndroidStudioProjects/P10FireBase/app/src/main/res/drawable/like_on.xml" value="0.2703125" />
+        <entry key="..\:/Users/Pol/AndroidStudioProjects/P10FireBase/app/src/main/res/drawable/side_nav_bar.xml" value="0.14635416666666667" />
+        <entry key="..\:/Users/Pol/AndroidStudioProjects/P10FireBase/app/src/main/res/layout/content_main.xml" value="0.1793478260869565" />
+        <entry key="..\:/Users/Pol/AndroidStudioProjects/P10FireBase/app/src/main/res/layout/fragment_home.xml" value="0.2504528985507246" />
+        <entry key="..\:/Users/Pol/AndroidStudioProjects/P10FireBase/app/src/main/res/layout/fragment_new_post.xml" value="0.2504528985507246" />
+        <entry key="..\:/Users/Pol/AndroidStudioProjects/P10FireBase/app/src/main/res/layout/fragment_profile.xml" value="0.2504528985507246" />
+        <entry key="..\:/Users/Pol/AndroidStudioProjects/P10FireBase/app/src/main/res/layout/fragment_register.xml" value="0.2504528985507246" />
+        <entry key="..\:/Users/Pol/AndroidStudioProjects/P10FireBase/app/src/main/res/layout/fragment_sign_in.xml" value="0.2504528985507246" />
+        <entry key="..\:/Users/Pol/AndroidStudioProjects/P10FireBase/app/src/main/res/layout/fragment_sign_out.xml" value="0.2504528985507246" />
+        <entry key="..\:/Users/Pol/AndroidStudioProjects/P10FireBase/app/src/main/res/layout/nav_header_main.xml" value="0.2504528985507246" />
+        <entry key="..\:/Users/Pol/AndroidStudioProjects/P10FireBase/app/src/main/res/layout/viewholder_post.xml" value="0.2504528985507246" />
+        <entry key="..\:/Users/Pol/AndroidStudioProjects/P10FireBase/app/src/main/res/menu/activity_main_drawer.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Pol/AndroidStudioProjects/P10FireBase/app/src/main/res/menu/main.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Pol/AndroidStudioProjects/P12FireBase-storage/app/src/main/res/layout/fragment_media.xml" value="0.15081521739130435" />
+        <entry key="..\:/Users/Pol/AndroidStudioProjects/P12FireBase-storage/app/src/main/res/layout/fragment_new_post.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Pol/AndroidStudioProjects/P12FireBase-storage/app/src/main/res/layout/viewholder_post.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Pol/AndroidStudioProjects/P12FireBase-storage/app/src/main/res/xml/paths.xml" value="0.25416666666666665" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
