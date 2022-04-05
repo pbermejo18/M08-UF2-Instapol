@@ -90,6 +90,7 @@ public class HomeFragment extends Fragment {
             else
                 holder.likeImageView.setImageResource(R.drawable.like_off);
             holder.numLikesTextView.setText(String.valueOf(post.likes.size()));
+            holder.horaTextView.setText(post.timestamp);
             holder.likeImageView.setOnClickListener(view -> {
                 FirebaseFirestore.getInstance().collection("posts")
                         .document(postKey)
@@ -116,7 +117,7 @@ public class HomeFragment extends Fragment {
 
         class PostViewHolder extends RecyclerView.ViewHolder {
             ImageView authorPhotoImageView, likeImageView, mediaImageView;
-            TextView authorTextView, contentTextView, numLikesTextView;
+            TextView authorTextView, contentTextView, numLikesTextView, horaTextView;
             PostViewHolder(@NonNull View itemView) {
                 super(itemView);
                 authorPhotoImageView =
@@ -128,6 +129,7 @@ public class HomeFragment extends Fragment {
                         itemView.findViewById(R.id.contentTextView);
                 numLikesTextView =
                         itemView.findViewById(R.id.numLikesTextView);
+                horaTextView = itemView.findViewById(R.id.hora);
             }
         }
 

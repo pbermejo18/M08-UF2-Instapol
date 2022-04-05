@@ -35,6 +35,8 @@ import com.google.firebase.storage.FirebaseStorage;
 
 import java.io.File;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.UUID;
 
 public class NewPostFragment extends Fragment {
@@ -161,10 +163,11 @@ public class NewPostFragment extends Fragment {
     }
 
     private void guardarEnFirestore(String postContent, String mediaUrl) {
+        String timeStamp = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss").format(Calendar.getInstance().getTime());
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         Post post = new Post(user.getUid(), user.getDisplayName(),
                 (user.getPhotoUrl() != null ? user.getPhotoUrl().toString() :
-                        "R.drawable.user"), postContent, mediaUrl, mediaTipo);
+                        "R.drawable.user"), postContent, mediaUrl, mediaTipo,timeStamp);
         FirebaseFirestore.getInstance().collection("posts")
                 .add(post)
                 .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
