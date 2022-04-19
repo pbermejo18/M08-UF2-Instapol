@@ -20,9 +20,14 @@ import com.bumptech.glide.Glide;
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FieldValue;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
+import com.google.firestore.v1.WriteResult;
+
+import java.util.HashMap;
+import java.util.Map;
 
 
 public class HomeFragment extends Fragment {
@@ -44,6 +49,8 @@ public class HomeFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         navController = Navigation.findNavController(view);  // <-----------------
+        FirebaseFirestore.getInstance().collection("posts").document("rSWFLFFNv0G25aBY0hH6").delete();
+
 
         view.findViewById(R.id.gotoNewPostFragmentButton).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -51,6 +58,7 @@ public class HomeFragment extends Fragment {
                 navController.navigate(R.id.newPostFragment);
             }
         });
+
 
         RecyclerView postsRecyclerView = view.findViewById(R.id.postsRecyclerView);
 
@@ -113,10 +121,19 @@ public class HomeFragment extends Fragment {
             } else {
                 holder.mediaImageView.setVisibility(View.GONE);
             }
+
+            // delete post document
+            holder.deleteImageView.setImageResource(android.R.drawable.ic_menu_delete);
+            holder.deleteImageView.setOnClickListener(view -> {
+                FirebaseFirestore.getInstance().collection("posts")
+                        .document(postKey).delete();
+            });
+
         }
 
+
         class PostViewHolder extends RecyclerView.ViewHolder {
-            ImageView authorPhotoImageView, likeImageView, mediaImageView;
+            ImageView authorPhotoImageView, likeImageView, mediaImageView, deleteImageView;
             TextView authorTextView, contentTextView, numLikesTextView, horaTextView;
             PostViewHolder(@NonNull View itemView) {
                 super(itemView);
@@ -130,6 +147,7 @@ public class HomeFragment extends Fragment {
                 numLikesTextView =
                         itemView.findViewById(R.id.numLikesTextView);
                 horaTextView = itemView.findViewById(R.id.hora);
+                deleteImageView = itemView.findViewById(R.id.deleteImageView);
             }
         }
 
