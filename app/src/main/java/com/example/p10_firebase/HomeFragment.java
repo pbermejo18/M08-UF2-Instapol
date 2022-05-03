@@ -29,7 +29,6 @@ import com.google.firestore.v1.WriteResult;
 import java.util.HashMap;
 import java.util.Map;
 
-
 public class HomeFragment extends Fragment {
 
     NavController navController;
@@ -49,7 +48,7 @@ public class HomeFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         navController = Navigation.findNavController(view);  // <-----------------
-        FirebaseFirestore.getInstance().collection("posts").document("rSWFLFFNv0G25aBY0hH6").delete();
+        // FirebaseFirestore.getInstance().collection("posts").document("rSWFLFFNv0G25aBY0hH6").delete();
 
 
         view.findViewById(R.id.gotoNewPostFragmentButton).setOnClickListener(new View.OnClickListener() {
@@ -62,7 +61,7 @@ public class HomeFragment extends Fragment {
 
         RecyclerView postsRecyclerView = view.findViewById(R.id.postsRecyclerView);
 
-        Query query = FirebaseFirestore.getInstance().collection("posts").limit(50).orderBy("timestamp", Query.Direction.DESCENDING);
+        Query query = FirebaseFirestore.getInstance().collection("posts").orderBy("timestamp", Query.Direction.DESCENDING).limit(50);
 
         FirestoreRecyclerOptions<Post> options = new FirestoreRecyclerOptions.Builder<Post>()
                 .setQuery(query, Post.class)
@@ -123,11 +122,16 @@ public class HomeFragment extends Fragment {
             }
 
             // delete post document
-            holder.deleteImageView.setImageResource(android.R.drawable.ic_menu_delete);
-            holder.deleteImageView.setOnClickListener(view -> {
-                FirebaseFirestore.getInstance().collection("posts")
-                        .document(postKey).delete();
-            });
+
+            if (post.uid.equals(uid)) {
+                holder.deleteImageView.setImageResource(android.R.drawable.ic_menu_delete);
+                holder.deleteImageView.setOnClickListener(view -> {
+
+                        FirebaseFirestore.getInstance().collection("posts")
+                                .document(postKey).delete();
+
+                });
+            }
 
         }
 

@@ -163,7 +163,7 @@ public class NewPostFragment extends Fragment {
     }
 
     private void guardarEnFirestore(String postContent, String mediaUrl) {
-        String timeStamp = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss").format(Calendar.getInstance().getTime());
+        String timeStamp = new SimpleDateFormat("HH:mm:ss dd/MM/yyyy").format(Calendar.getInstance().getTime());
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         Post post = new Post(user.getUid(), user.getDisplayName(),
                 (user.getPhotoUrl() != null ? user.getPhotoUrl().toString() :

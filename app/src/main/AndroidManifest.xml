@@ -24,7 +24,7 @@
 
         <provider
             android:name="androidx.core.content.FileProvider"
-            android:authorities="com.example.socialapp.fileprovider"
+            android:authorities="com.example.p10_firebase.fileprovider"
             android:exported="false"
             android:grantUriPermissions="true">
             <meta-data
